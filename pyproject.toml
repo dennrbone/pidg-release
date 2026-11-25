@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pidg"
+version = "1.0.0rc4"
+description = "Шлюз проверки разрешений на вызовы инструментов агента"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "anyio>=4.5,<5",
+    "jsonschema>=4.26,<5",
+    "mcp>=1.30,<2",
+    "pydantic>=2.12,<3",
+]
+
+[project.scripts]
+pidg = "pidg.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
